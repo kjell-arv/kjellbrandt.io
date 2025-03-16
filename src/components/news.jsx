@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import './news.css';
-import img1 from './img/jwm.jpg';
+import img1 from './img/jwm.JPG';
 import spainsvg from './img/4x3/es.svg';
 import img2 from './img/holten.JPG';
 import NEDsvg from './img/4x3/nl.svg';
