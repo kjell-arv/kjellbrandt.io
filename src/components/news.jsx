@@ -7,7 +7,7 @@ import img2 from './img/holten.jpg';
 import NEDsvg from './img/4x3/nl.svg';
 import img3 from './img/JEM3.JPG';
 import TURsvg from './img/4x3/tr.svg';
-import img4 from './img/MalleTl.JPG'
+import img4 from './img/MalleTL.JPG'
 
 export default function News() {
 
