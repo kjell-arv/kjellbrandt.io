@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './YellowDot2.css';
+import './yellowDot2.css';
 import useWindowHeight from './useWindowHeight';
 
 const YellowDot2 = () => {
