@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './header.css';
-import { div } from 'three/tsl';
 
 export default function Header() {
   const [showTopics, setShowTopics] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const toggleTopics = () => {
-    if (!showTopics) {
-      setShowMenu(false); // Close the menu if topics are being activated
-    }
-    setShowTopics(!showTopics); // Toggle the topics
+    setShowTopics(prev => !prev);
   };
-  
+
   const toggleMenu = () => {
-    if (!showMenu) {
-      setShowTopics(false); // Close topics if the menu is being activated
-    }
-    setShowMenu(!showMenu); // Toggle the menu
+    setShowMenu(prev => !prev);
   };
+
+  useEffect(() => {
+    if (showTopics || showMenu) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable scrolling
+    }
+  
+    return () => {
+      document.body.style.overflow = ""; // Cleanup on unmount
+    };
+  }, [showTopics, showMenu]);
 
   const handleTopicSelection = (topic) => {
     const email = 'kab.request@gmail.com';
@@ -34,6 +40,13 @@ export default function Header() {
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 
+  const handleClick = () => {
+    setIsClicked(prev => !prev); // Toggle color and state
+    document.getElementById('contactMe').style.color = isClicked ? 'black' : 'rgb(255, 100, 100)';
+    
+    // Toggle showTopics visibility when contactMe is clicked
+    toggleTopics();
+  };
 
   return (
     <>
@@ -41,10 +54,7 @@ export default function Header() {
         <div className='headerdiv animated-border border-r-2 border-l-2 border-neutral-200 w-10/12 font-bold'>
           <div className='div1'>
             <div className='namediv h-full flex justify-center'>
-              <h1
-                className='contacth1 text-3xl font-extrabold font-sans cursor-pointer select-none'
-                onClick={toggleTopics}
-              >
+              <h1 className='contacth1 text-3xl font-extrabold font-sans cursor-pointer select-none'>
                 KAB
               </h1>
               <p className='contactp'>
@@ -61,10 +71,25 @@ export default function Header() {
             {showMenu && (
               <div className='responsivediv absolute'>
                 <ul className='menu flex flex-col gap-9 pl-12 pt-8 list-disc '>
-                  <li><a href="#" className='hover:text-neutral-500 select-none text-xl'>About Me</a></li>
-                  <li><a href="#" className='hover:text-neutral-500 select-none text-xl'>News</a></li>
-                  <li><a href="#" className='hover:text-neutral-500 select-none text-xl'>Upcoming Events</a></li>
-                  <li><a href="#" className='hover:text-neutral-500 select-none text-xl'>Partners</a></li>
+                  <ul className='flex flex-col gap-6 '>
+                    <h2 className=' text-3xl'>Navitgation</h2>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Home</a></li>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>About Me</a></li>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>News & Blog</a></li>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Upcoming Events</a></li>
+                  </ul>
+                  <ul className='flex flex-col gap-6 '>
+                    <h2 className=' text-3xl'>Community</h2>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Partners</a></li>
+                    <li><a href=""  className='hover:text-neutral-500 select-none text-xl ml-8'>Subscribe to my newsletter</a></li>
+                  </ul>
+                  <ul className='flex flex-col gap-6 '>
+                    <h2 className=' text-3xl'>Contact</h2>
+                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Social Media</a></li>
+                    <li><a id='contactMe' onClick={handleClick} className=' hover:text-neutral-500 select-none text-xl ml-8 cursor-pointer'>Contact Me</a></li>
+                  </ul> 
+                  
+                  
                 </ul>
               </div>
             )}
@@ -82,21 +107,11 @@ export default function Header() {
           {/* Conditionally render the topic selection div */}
           {showTopics && (
             <div className='topic-selection-div absolute flex flex-col'>
-              <div className='flex justify-between'>
+              <div className='flex justify-between mb-6 mt-2'>
                 <p>Select a topic:</p>
-                <svg
-                  className={`tclosed ${showTopics ? "active" : ""}`}
-                  width="30"
-                  height="30"
-                  viewBox="0 0 100 80"
-                  onClick={toggleTopics}
-                >
-                  <rect className="line top" width="80" height="15" rx="10"></rect>
-                  <rect className="line bottom" y="60" width="80" height="15" rx="10"></rect>
-                </svg>
               </div>
 
-              <ul className='list-disc'>
+              <ul className='list-disc pl-6'>
                 <li onClick={() => handleTopicSelection('General Inquiry')}>General Inquiry</li>
                 <li onClick={() => handleTopicSelection('Sponsorship Questions')}>Sponsorship Questions</li>
                 <li onClick={() => handleTopicSelection('Feedback')}>Feedback</li>
@@ -109,3 +124,4 @@ export default function Header() {
     </>
   );
 }
+

@@ -64,7 +64,7 @@
     height: 200px;
     width: 300px;
     background-color: rgba(255, 255, 255, 0.859);
-    border-radius: 15px;
+    border-radius: 20px 20px 0px 0px;
     border: 2px solid rgba(229, 229, 229, 1);
     top: 100px;
     left: 140px;
@@ -77,16 +77,7 @@
     font-weight: 800;
 }
 
-.topic-selection-div ul {
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 5px;
-    text-decoration: underline 1px rgb(179, 179, 179);
-    cursor: pointer;
-    user-select: none;
-}
+
 
 @keyframes moveUpDown {
     0% {
@@ -185,16 +176,17 @@
 
     .responsivediv {
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
-        width: 300px;
-        height: 300px;
-        width: screen;
-        background-color: rgba(255, 255, 255, 0.98);
-        border-radius: 20px 20px 20px 20px;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.998);
         box-shadow: 6px 6px 10px 2px rgba(137, 137, 137, 0.189);
-        border: 2px solid rgb(226, 226, 226);
         transition: 2s ease;
+    }
+    .menu{
+        height: 100%;
+        width: 100%;
     }
 
     .responsivediv p {
@@ -258,17 +250,26 @@
         top: 70px;
     }
 
-    .tclosed {
+
+    .topic-selection-div {
+        width: 100vw;
+        height: 30vh;
+        top: 700px;
+        left: 0;
+        box-shadow: -6px -6px 10px 2px rgba(152, 152, 152, 0.189);
+    }
+    .topic-selection-div ul {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 5px;
+        text-decoration: underline 1px rgb(179, 179, 179);
         cursor: pointer;
-        transition: transform 0.3s ease;
+        user-select: none;
     }
-
-    .tclosed .line.top {
-        transform: translateY(35px) translateX(-20px) rotate(45deg);
-    }
-
-    .tclosed .line.bottom {
-        transform: translateY(-20px) translateX(-15px) rotate(-45deg);
+    .contactMe.active {
+        color: rgb(184, 184, 184); /* Stay gray when active */
     }
 }
 
