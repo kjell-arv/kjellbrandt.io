@@ -1,0 +1,17 @@
+.yellow-dot-container {
+    position: absolute;
+  }
+  
+  .yellow-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 196, 0);
+    box-shadow: 4px 4px 10px 2px rgb(189, 189, 189);
+    border-radius: 50%;
+    opacity: 0;
+    left: 1000px; /* Starting x-coordinate */
+    top: -550px;  /* Starting y-coordinate */
+    transition: opacity 0.3s;
+    z-index: 1;
+  }

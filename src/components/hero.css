@@ -1,0 +1,100 @@
+@media screen and (min-height: 700px) and (max-height: 1040px) {
+
+    .herosec {
+        height: 800px;
+    }
+    .portraitImg{
+        height: 270px;
+        width: 270px;
+        object-fit: cover;
+        animation: wobble 5s ease infinite;
+        border: 3px solid rgb(255, 221, 72);
+    }
+    .personalCard {
+        border: 2px solid rgb(226, 226, 226);
+        border-radius: 25px 25px 25px 25px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        box-shadow: 6px 6px 10px 2px rgba(137, 137, 137, 0.189);
+    }
+
+    .rotatedEm {
+        font-size: 30px;
+        position: absolute;
+        top: -7px;
+        right: -35px;
+        animation: moveUpDownD 6.5s ease-in-out infinite;
+        color: rgb(0, 0, 0);
+    }
+
+      
+    .newsletterDiv {
+        position: absolute;
+        right: 310px;
+        top: 130px;
+        border: 2px solid lightgray;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        box-shadow: 6px 6px 10px 2px rgba(115, 115, 115, 0.189);
+    }
+    .dotchannel {
+      position: absolute;
+      height: 28px;
+      width: 4px;
+      background-color: rgb(128, 128, 128);
+      right: 489px;
+      top: 267px;
+      box-shadow: 1px 0px 4px 0px rgb(130, 130, 130);
+    }
+    .socialdiv {
+      border-radius: 20px;
+      border: 2px solid rgb(226, 226, 226);
+      background-color: white;
+      box-shadow: 6px 6px 10px 2px rgba(171, 171, 171, 0.189);
+      top: 360px;
+      left: 320px;
+    }
+}
+
+
+
+@keyframes moveUpDownD {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px); /* Adjust the value to control the movement distance */
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+  
+@media screen and (min-height: 300px) and (max-height: 699px) {
+
+    .herosec {
+        height: 400px;
+    }
+}
+
+@keyframes wobble {
+  0% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 60% 40% 55% 45% / 45% 55% 60% 40%;
+  }
+  50% {
+    border-radius: 40% 60% 45% 55% / 55% 45% 40% 60%;
+  }
+  75% {
+    border-radius: 55% 45% 60% 40% / 60% 40% 55% 45%;
+  }
+  100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+}
+
+  
