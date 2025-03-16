@@ -3,11 +3,11 @@ import { useState, useEffect, useRef } from 'react';
 import './news.css';
 import img1 from './img/jwm.JPG';
 import spainsvg from './img/4x3/es.svg';
-import img2 from './img/holten.JPG';
+import img2 from './img/holten.jpg';
 import NEDsvg from './img/4x3/nl.svg';
 import img3 from './img/JEM3.JPG';
 import TURsvg from './img/4x3/tr.svg';
-import img4 from './img/MalleTl.jpg'
+import img4 from './img/MalleTl.JPG'
 
 export default function News() {
 
