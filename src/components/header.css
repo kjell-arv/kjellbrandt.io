@@ -181,7 +181,7 @@
         padding-bottom: 20px;
     }
     .responsivediv.topics-active {
-        padding-bottom: 300px; /* Add 60px padding when showTopics is active */
+        padding-bottom: 40px; /* Add 60px padding when showTopics is active */
     }
     .menu{
         width: 100%;
