@@ -11,7 +11,12 @@ export default function Header() {
   };
 
   const toggleMenu = () => {
-    setShowMenu(prev => !prev);
+    setShowMenu((prev) => {
+      if (prev) {
+        setShowTopics(false); // Close topics if the menu is being closed
+      }
+      return !prev; // Toggle the menu state
+    });
   };
   function setMenuHeight() {
     const vh = window.innerHeight * 0.01;
@@ -55,7 +60,7 @@ export default function Header() {
 
   const handleClick = () => {
     setIsClicked(prev => !prev); // Toggle color and state
-    document.getElementById('contactMe').style.color = isClicked ? 'black' : 'rgb(255, 100, 100)';
+    document.getElementById('contactMe').style.color = isClicked ? 'black' : 'rgb(255, 132, 0)';
 
     // Toggle showTopics visibility when contactMe is clicked
     toggleTopics();
@@ -67,12 +72,9 @@ export default function Header() {
         <div className='headerdiv animated-border border-r-2 border-l-2 border-neutral-200 w-10/12 font-bold'>
           <div className='div1'>
             <div className='namediv h-full flex justify-center'>
-              <h1 className='contacth1 text-3xl font-extrabold font-sans cursor-pointer select-none'>
+              <h1 className='contacth1 text-3xl font-extrabold font-sans select-none'>
                 KAB
               </h1>
-              <p className='contactp'>
-                Contact Me ...<span className='text-xl fingerem'>&#9757;</span>
-              </p>
               <div className={`menutoggle ${showMenu ? "active" : ""}`} onClick={toggleMenu}>
                 <svg className="burger-icon" width="30" height="30" viewBox="0 0 100 80">
                   <rect className="line top" width="100" height="15" rx="10"></rect>
