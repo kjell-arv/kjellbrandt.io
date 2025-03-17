@@ -13,6 +13,19 @@ export default function Header() {
   const toggleMenu = () => {
     setShowMenu(prev => !prev);
   };
+  function setMenuHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
+  // Initial call
+  setMenuHeight();
+  
+  // Recalculate on resize and orientation change
+  window.addEventListener('resize', setMenuHeight);
+  window.addEventListener('orientationchange', setMenuHeight);
+  
+
 
   useEffect(() => {
     if (showTopics || showMenu) {
@@ -70,7 +83,7 @@ export default function Header() {
             </div>
             {showMenu && (
               <div className='responsivediv absolute'>
-                <ul className='menu flex flex-col gap-9 pl-12 pt-8 list-disc '>
+                <ul className='menu flex flex-col gap-9 pl-12 pt-8 mb-8'>
                   <ul className='flex flex-col gap-6 '>
                     <h2 className=' text-3xl'>Navitgation</h2>
                     <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Home</a></li>
