@@ -17,14 +17,14 @@ export default function Header() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
-  
+
   // Initial call
   setMenuHeight();
-  
+
   // Recalculate on resize and orientation change
   window.addEventListener('resize', setMenuHeight);
   window.addEventListener('orientationchange', setMenuHeight);
-  
+
 
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Header() {
     } else {
       document.body.style.overflow = ""; // Re-enable scrolling
     }
-  
+
     return () => {
       document.body.style.overflow = ""; // Cleanup on unmount
     };
@@ -56,7 +56,7 @@ export default function Header() {
   const handleClick = () => {
     setIsClicked(prev => !prev); // Toggle color and state
     document.getElementById('contactMe').style.color = isClicked ? 'black' : 'rgb(255, 100, 100)';
-    
+
     // Toggle showTopics visibility when contactMe is clicked
     toggleTopics();
   };
@@ -82,7 +82,7 @@ export default function Header() {
               </div>
             </div>
             {showMenu && (
-              <div className='responsivediv absolute'>
+              <div className={`responsivediv ${showTopics ? "topics-active" : ""}`}>
                 <ul className='menu flex flex-col gap-9 pl-12 pt-8 mb-8'>
                   <ul className='flex flex-col gap-6 '>
                     <h2 className=' text-3xl'>Navitgation</h2>
@@ -94,15 +94,29 @@ export default function Header() {
                   <ul className='flex flex-col gap-6 '>
                     <h2 className=' text-3xl'>Community</h2>
                     <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Partners</a></li>
-                    <li><a href=""  className='hover:text-neutral-500 select-none text-xl ml-8'>Subscribe to my newsletter</a></li>
+                    <li><a href="" className='hover:text-neutral-500 select-none text-xl ml-8'>Subscribe to my newsletter</a></li>
                   </ul>
-                  <ul className='flex flex-col gap-6 '>
-                    <h2 className=' text-3xl'>Contact</h2>
-                    <li><a href="#" className='hover:text-neutral-500 select-none text-xl ml-8'>Social Media</a></li>
-                    <li><a id='contactMe' onClick={handleClick} className=' hover:text-neutral-500 select-none text-xl ml-8 cursor-pointer'>Contact Me</a></li>
-                  </ul> 
-                  
-                  
+                  <ul className='flex flex-col '>
+                    <h2 className=' text-3xl mb-6'>Contact</h2>
+                    <li className='mb-6'><a href="#" className=' hover:text-neutral-500 select-none text-xl ml-8'>Social Media</a></li>
+                    <li className=''><a id='contactMe' onClick={handleClick} className=' hover:text-neutral-500 select-none text-xl ml-8 cursor-pointer'>Contact Me</a></li>
+                    <li>
+                      {showTopics && (
+                        <div className='topic-selection-div flex flex-col'>
+                          <div className='flex justify-between mb-6 mt-2'>
+                            <p>Select a topic:</p>
+                          </div>
+
+                          <ul className='list-disc pl-6'>
+                            <li onClick={() => handleTopicSelection('General Inquiry')}>General Inquiry</li>
+                            <li onClick={() => handleTopicSelection('Sponsorship Questions')}>Sponsorship Questions</li>
+                            <li onClick={() => handleTopicSelection('Feedback')}>Feedback</li>
+                            <li onClick={() => handleTopicSelection('Other')}>Other</li>
+                          </ul>
+                        </div>
+                      )}
+                    </li>
+                  </ul>
                 </ul>
               </div>
             )}
@@ -118,20 +132,6 @@ export default function Header() {
             </div>
           </div>
           {/* Conditionally render the topic selection div */}
-          {showTopics && (
-            <div className='topic-selection-div absolute flex flex-col'>
-              <div className='flex justify-between mb-6 mt-2'>
-                <p>Select a topic:</p>
-              </div>
-
-              <ul className='list-disc pl-6'>
-                <li onClick={() => handleTopicSelection('General Inquiry')}>General Inquiry</li>
-                <li onClick={() => handleTopicSelection('Sponsorship Questions')}>Sponsorship Questions</li>
-                <li onClick={() => handleTopicSelection('Feedback')}>Feedback</li>
-                <li onClick={() => handleTopicSelection('Other')}>Other</li>
-              </ul>
-            </div>
-          )}
         </div>
       </section>
     </>
