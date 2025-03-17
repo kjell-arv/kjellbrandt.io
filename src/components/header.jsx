@@ -99,7 +99,7 @@ export default function Header() {
                   <ul className='flex flex-col '>
                     <h2 className=' text-3xl mb-6'>Contact</h2>
                     <li className='mb-6'><a href="#" className=' hover:text-neutral-500 select-none text-xl ml-8'>Social Media</a></li>
-                    <li className=''><a id='contactMe' onClick={handleClick} className=' hover:text-neutral-500 select-none text-xl ml-8 cursor-pointer'>Contact Me</a></li>
+                    <li className='mb-3'><a id='contactMe' onClick={handleClick} className=' hover:text-neutral-500 select-none text-xl ml-8 cursor-pointer'>Contact Me</a></li>
                     <li>
                       {showTopics && (
                         <div className='topic-selection-div flex flex-col'>
@@ -107,7 +107,7 @@ export default function Header() {
                             <p>Select a topic:</p>
                           </div>
 
-                          <ul className='list-disc pl-6'>
+                          <ul className=' pl-6'>
                             <li onClick={() => handleTopicSelection('General Inquiry')}>General Inquiry</li>
                             <li onClick={() => handleTopicSelection('Sponsorship Questions')}>Sponsorship Questions</li>
                             <li onClick={() => handleTopicSelection('Feedback')}>Feedback</li>
