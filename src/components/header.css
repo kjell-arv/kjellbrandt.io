@@ -221,6 +221,27 @@
         font-weight: 800;
         user-select: none;
     }
+    .topic-selection-div {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    .topic-selection-div ul {
+        display: flex;
+        flex-direction: row;
+        gap: .9rem;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .topic-selection-div ul li {
+        border-right: solid 1px rgb(179, 179, 179);
+        padding-right: 12px;
+    }
+    .topic-selection-div ul li:hover {
+        color: #820000;
+    }
 }
 
 /* Styles for medium screens (tablets, 600px to 1024px) */

@@ -32,7 +32,7 @@ function Hero() {
 
   return (
     <section className=' herosec w-screen flex justify-center z-0'>
-      <div className=' w-10/12 pt-48 flex items-start border-r-2 border-l-2 flex-col justify-start'>
+      <div className='centre w-10/12 pt-48 flex items-start border-r-2 border-l-2 flex-col justify-start'>
         <div className=' newsletterDiv bg-amber-100 hover:bg-amber-200'><h2 className=' font-bold'>Subscribe to my newsletter <span className=' rotatedEm '>&#10548;</span></h2></div>
         <div className=' personalCard flex w-8/12 justify-evenly ml-32 bg-white z-20'>
             <div className='dotchannel' />
@@ -41,14 +41,14 @@ function Hero() {
             </div>
             <div className=' flex-col pl-4'>
               <h1 className=' font-bold text-6xl text-center'>Kjell Arved Brandt</h1>
-              <p className=' font-bold text-sm pb-8 italic pt-4 text-center text-gray-700'>"Vom Becken an die Weltspitze" <span className=' text-xl'>&#129351;</span></p>
+              <p className='pinp font-bold text-sm pb-8 italic pt-4 text-center text-gray-700'>"Vom Becken an die Weltspitze" <span className=' text-xl'>&#129351;</span></p>
               <p className='leading-8 text-center pb-4'>Hey! I am <span className=' font-bold'>Kjell</span>, 18y/o triathlete from <span className=' font-bold'>Berlin, Germany</span>. <br /> This is my website to keep family and people updated  <br /> on <span className=' font-bold'>news</span>, <span className=' font-bold'>upcoming events</span> and <span className=' font-bold'>me</span>...</p>
             </div>
         </div>
 
         <div className='socialsec w-full flex z-10'>
         <div className=' socialdiv flex items-end w-6/12 h-60 absolute p-3'>
-            <div className='flex w-full'>
+            <div className=' social flex w-full'>
               <h1 className=' socialh1 text-3xl pt-2 pb-2 font-bold'>Socials:</h1>
               <div className='flex items-center justify-evenly w-full'>
                 <a href="https://www.instagram.com/kjell_arv/" target="_blank" className='flex items-center'><img src={instalogo} alt="" className=' object-contain h-5 mr-2' /><p>kjell_arv</p></a>
