@@ -23,9 +23,7 @@ function App() {
           <Route index element={
             <>
               <Hero />
-              <YellowDot />
               <AboutMe />
-              <YellowDot2 />
               <News />
             </>
           }

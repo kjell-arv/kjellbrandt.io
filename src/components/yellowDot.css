@@ -15,7 +15,7 @@
       border-radius: 50%;
       opacity: 0;
       left: 1000px; /* Starting x-coordinate */
-      top: -550px;  /* Starting y-coordinate */
+      top: -602px;  /* Starting y-coordinate */
       transition: opacity 0.3s;
       z-index: 1;
     }

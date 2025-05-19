@@ -1,6 +1,6 @@
  @media screen and (min-width: 1414px) {
   .herosec {
-    height: 800px;
+    height: 850px;
 }
 .portraitImg{
     height: 270px;
@@ -137,9 +137,7 @@
 
 
 @media screen and (max-width: 901px) {
-    .herosec {
-        height: 1000px;
-    }
+    
     .portraitImg{
         height: 250px;
         width: 250px;
@@ -177,9 +175,6 @@
       
     .newsletterDiv {
         display: none;
-    }
-    .dotchannel {
-      display: none;
     }
     .socialsec {
       border-radius: 20px;
@@ -224,9 +219,6 @@
   .centre {
     padding-top: 110px;
   }
-  .dotchannel {
-    display: none;
-  }
   .menutoggle {
     overflow: hidden;
   }
@@ -237,5 +229,13 @@
     padding-top: 80px;
     padding-bottom: 40px;
   }
-  
+  .p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 902px) and (max-width: 1154px ) {
+  .socialdiv {
+    display: none;
+  }
 }

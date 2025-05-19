@@ -34,22 +34,22 @@ export default function News() {
     return (
         <>
             <div className="newssec w-screen flex justify-center">
-                <div className='w-10/12 border-r-2 border-l-2'>
-                    <div className='flex flex-col'>
-                        <div>
+                <div className='newslayout w-10/12 border-r-2 border-l-2'>
+                    <div className='newspack flex flex-col'>
+                        <div className='w-full'>
                             <h1 id='newsh1' className='w-28 text-center text-4xl font-bold mb-16'>News</h1>
                         </div>
-                        <div>
-                            <h2 className='w-52 text-center text-xl font-extrabold ml-12 mb-5 text-gray-800'><a href="">Competitions</a></h2>
+                        <div className='w-full'>
+                            <h2 className='w-52  text-xl font-extrabold ml-12 mb-5 text-gray-800'><a href="">Competitions</a></h2>
                         </div>
-                        <div className='flex justify-between pl-20 pr-20 text-black'>
+                        <div className='firstcol pb-12 flex justify-between pl-20 pr-20 text-black'>
                             <div className='newscard flex-col '>
                                 <div className='imggrad'></div>
                                 <img src={img1} alt="" className='img1' />
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Junior Worldchamps<span className='text-xl ml-1'>&#127752;</span></h1>
                                     <h4 className='pl-3'>Torremolinos, Spain <img src={spainsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>... it was a pretty good race, ...</p>
+                                    <p className='informationp'>... it was a pretty good race, ...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@ export default function News() {
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Junior European Cup<span className=' text-2xl mr-1'>&#129351;</span></h1>
                                     <h4 className='pl-3'>Holten, Netherlands <img src={NEDsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>more...</p>
+                                    <p className='informationp'>more...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>
@@ -69,22 +69,22 @@ export default function News() {
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Junior Europechamps</h1>
                                     <h4 className='pl-3'>Balikisir, Turkey <img src={TURsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>more...</p>
+                                    <p className='informationp'>more...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <h2 className='w-52 text-xl font-extrabold pl-9 ml-12 mb-5 mt-12 text-gray-800'><a href="">Blog</a></h2>
+                        <div className='w-full mt-10'>
+                            <h2 className='w-52 text-xl font-extrabold ml-12 mb-5 text-gray-800'><a href="">Blog</a></h2>
                         </div>
-                        <div className='flex justify-between pl-20 pr-20 text-black'>
+                        <div className='secondcol flex  justify-between pl-20 pr-20 text-black'>
                             <div className='newscard flex-col '>
                                 <div className='imggrad'></div>
                                 <img src={img4} alt="" className='img4' />
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Training Camp</h1>
                                     <h4 className='pl-3'>Mallorca, Spain <img src={spainsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>...2 weeks together with the national team and some good testing results. Good training in the books, but what happened on the Island was though...</p>
+                                    <p className='informationp'>...2 weeks together with the national team and some good testing results. Good training in the books, but what happened on the Island was though...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ export default function News() {
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Junior European Cup<span className=' text-2xl mr-1'>&#129351;</span></h1>
                                     <h4 className='pl-3'>Holten, Netherlands <img src={NEDsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>more...</p>
+                                    <p className='informationp'>more...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ export default function News() {
                                 <div className='overlay flex-col flex gap-2'>
                                     <h1>Junior Europechamps</h1>
                                     <h4 className='pl-3'>Balikisir, Turkey <img src={TURsvg} alt="" className='flagsvg inline ml-1'/></h4>
-                                    <p>more...</p>
+                                    <p className='informationp'>more...</p>
                                     <a href=""  className='text-sm text-center text-blue-500 mt-6'>More...</a>
                                 </div>
                             </div>

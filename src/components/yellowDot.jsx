@@ -10,7 +10,7 @@ const YellowDot = () => {
   const windowHeight = useWindowHeight();
 
   // Determine speed multiplier based on window height
-  const speedMultiplier = windowHeight >= 700 && windowHeight <= 850 ? 6.58 : 6.05;
+  const speedMultiplier = windowHeight >= 700 && windowHeight <= 850 ? 6.58 : 7.05;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +45,7 @@ const YellowDot = () => {
       <svg width="0" height="0">
         <path
           ref={pathRef}
-          d="M 0 0 C 66 -1 168 23 207 20 C 294 31 413 24 414 81 C 442 217 395 232 413 305 C 455 692 -630 402 -747 417 C -825 404 -867 499 -788 544"
+          d="M 0 0 C 66 -1 168 23 207 20 C 294 31 413 24 414 81 C 442 217 395 232 413 305 C 455 692 -630 402 -747 417 C -825 404 -867 499 -788 584"
           fill="transparent"
           stroke="transparent"
           id="motionPath"

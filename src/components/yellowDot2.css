@@ -13,7 +13,7 @@
       border-radius: 50%;
       opacity: 0;
       left: 350px; /* Starting x-coordinate */
-      top: -790px;  /* Starting y-coordinate */
+      top: -990px;  /* Starting y-coordinate */
       transition: opacity 0.3s;
       z-index: 1;
     }
